@@ -13,7 +13,7 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/banner" href="#banner">Brand</Nav.Link>
-                        <Nav.Link as={Link} to="/services" href="#services">Items</Nav.Link>
+                        <Nav.Link as={Link} to="/products" href="#products">Products</Nav.Link>
                     </Nav>
                     <Nav>
                     <div className='me-5 d-flex justify-content-between'>

@@ -1,0 +1,75 @@
+[
+    {
+        "_id": "1",
+        "name": "Hardly Davidson",
+        "price": 2000,
+        "img": "https://img.freepik.com/free-photo/luxurious-black-motorcycle_1398-277.jpg?t=st=1651839973~exp=1651840573~hmac=c3b560a02412bcadd38b0899bddebfe96af0152d753fa2c6fb78da7eada295ec&w=740",
+        "Quantity" : 1,
+        "SupplierName" : "Yamaha Chittagong",
+        "Sold" : 1
+      },
+    {
+        "_id": "2",
+        "name": "Hardly Davidson",
+        "price": 2000,
+        "img": "https://img.freepik.com/free-photo/luxurious-black-motorcycle_1398-277.jpg?t=st=1651839973~exp=1651840573~hmac=c3b560a02412bcadd38b0899bddebfe96af0152d753fa2c6fb78da7eada295ec&w=740",
+        "Quantity" : 1,
+        "Supplier Name" : "Yamaha Chittagong",
+        "Sold" : 1
+      },
+    {
+        "_id": "3",
+        "name": "Hardly Davidson",
+        "price": 2000,
+        "img": "https://img.freepik.com/free-photo/luxurious-black-motorcycle_1398-277.jpg?t=st=1651839973~exp=1651840573~hmac=c3b560a02412bcadd38b0899bddebfe96af0152d753fa2c6fb78da7eada295ec&w=740",
+        "Quantity" : 1,
+        "Supplier Name" : "Yamaha Chittagong",
+        "Sold" : 1
+      },
+    {
+        "_id": "4",
+        "name": "Hardly Davidson",
+        "price": 2000,
+        "img": "https://img.freepik.com/free-photo/luxurious-black-motorcycle_1398-277.jpg?t=st=1651839973~exp=1651840573~hmac=c3b560a02412bcadd38b0899bddebfe96af0152d753fa2c6fb78da7eada295ec&w=740",
+        "Quantity" : 1,
+        "Supplier Name" : "Yamaha Chittagong",
+        "Sold" : 1
+      },
+    {
+        "_id": "5",
+        "name": "Hardly Davidson",
+        "price": 2000,
+        "img": "https://img.freepik.com/free-photo/luxurious-black-motorcycle_1398-277.jpg?t=st=1651839973~exp=1651840573~hmac=c3b560a02412bcadd38b0899bddebfe96af0152d753fa2c6fb78da7eada295ec&w=740",
+        "Quantity" : 1,
+        "Supplier Name" : "Yamaha Chittagong",
+        "Sold" : 1
+      },
+    {
+        "_id": "6",
+        "name": "Hardly Davidson",
+        "price": 2000,
+        "img": "https://img.freepik.com/free-photo/luxurious-black-motorcycle_1398-277.jpg?t=st=1651839973~exp=1651840573~hmac=c3b560a02412bcadd38b0899bddebfe96af0152d753fa2c6fb78da7eada295ec&w=740",
+        "Quantity" : 1,
+        "Supplier Name" : "Yamaha Chittagong",
+        "Sold" : 1
+      },
+    {
+        "_id": "7",
+        "name": "Hardly Davidson",
+        "price": 2000,
+        "img": "https://img.freepik.com/free-photo/luxurious-black-motorcycle_1398-277.jpg?t=st=1651839973~exp=1651840573~hmac=c3b560a02412bcadd38b0899bddebfe96af0152d753fa2c6fb78da7eada295ec&w=740",
+        "Quantity" : 1,
+        "Supplier Name" : "Yamaha Chittagong",
+        "Sold" : 1
+      },
+    {
+        "_id": "8",
+        "name": "Hardly Davidson",
+        "price": 2000,
+        "img": "https://img.freepik.com/free-photo/luxurious-black-motorcycle_1398-277.jpg?t=st=1651839973~exp=1651840573~hmac=c3b560a02412bcadd38b0899bddebfe96af0152d753fa2c6fb78da7eada295ec&w=740",
+        "Quantity" : 1,
+        "SupplierName" : "Yamaha Chittagong",
+        "Sold" : 1
+      }
+      
+]
