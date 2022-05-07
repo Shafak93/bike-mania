@@ -17,8 +17,7 @@ const Product = (props) => {
                     <p>Price:${price}</p>
                     <p>Quantity:{Quantity}</p>
                     <p>Supplier Name:{SupplierName}</p>
-                    <button onClick={()=>navigateToUpdateProduct(_id)} className='btn btn-primary' product={props}>Update Product</button>
-                    {/* <Link to='/product/:productId' className=' btn btn-primary'>Update Product</Link> */}
+                    <button onClick={()=>navigateToUpdateProduct(_id)} className='btn btn-primary'>Update Product</button>
                 </div>
             </div>
         </div>

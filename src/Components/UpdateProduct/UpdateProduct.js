@@ -5,14 +5,38 @@ import './UpdateProduct.css';
 
 const UpdateProduct = () => {
     const {productId} = useParams();
-    console.log(productId);
     const [product, setProduct] = useState({});
+
     useEffect(()=>{
         const url = `http://localhost:5000/bike/${productId}`
         fetch(url)
         .then(res => res.json())
         .then(data => setProduct(data))
     },[])
+
+    const {stock,name,SupplierName,price,Quantity,Sold} = product;
+    const handleUpdateStock = event =>{
+        event.preventDefault();
+        const updatedStock = parseFloat(stock) + parseFloat(event.target.stock.value);
+        const updateInfo = {stock : updatedStock,name,SupplierName,price,Quantity,Sold}
+        setProduct(updateInfo);
+
+        //Send data to the server
+        const url = `http://localhost:5000/bike/${productId}`
+        fetch(url,{
+            method: 'PUT',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log('success', data)
+            alert('Stock updated')
+            event.target.reset()
+        })
+    }
 
     return (
         <div className='container mt-3 row'>
@@ -27,16 +51,13 @@ const UpdateProduct = () => {
                         <p>Quantity: {product.Quantity} </p>
                         <p>Sold: {product.Sold} </p>
                         <p>Stock: {product.stock} </p>
+                        <button className='btn btn-secondary'>Delivered</button>
                     </div>
             </div>
             <div className='col-md-6'>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicQuantity">
-                            <Form.Label>Quantity</Form.Label>
-                            <Form.Control type="number" name='name' placeholder={product.Quantity} disabled />
-                        </Form.Group>
+                    <Form onSubmit={handleUpdateStock}>
                         <Form.Group className="mb-3" controlId="formBasicStock">
-                            <Form.Control type="number" name='restock' placeholder='Restock' />
+                            <Form.Control type="number" name='stock' placeholder='Restock' />
                         </Form.Group>
                         <button className='btn btn-secondary'>Update</button>
                     </Form>
