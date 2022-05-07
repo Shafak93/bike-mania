@@ -1,11 +1,115 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 
 const Signup = () => {
+    const [userInput, setUserInput] = useState({
+        email: "",
+        password:"",
+        confirmPass: "",
+    })
+    const [errors, setErrors] = useState({
+        email:"",
+        password:"",
+        others:"",
+    })
+    const [agree, setAgree] = useState();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+      const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (user) {
+            navigate(from);
+        }
+    }, [user]);
+
+    useEffect(() => {
+        if (error) {
+            switch (error?.code) {
+                case "auth/invalid-email":
+                    toast("Invalid email provided, please provide a valid email");
+                    break;
+                case "auth/invalid-password":
+                    toast("Wrong password. Intruder!!");
+                    break;
+                default:
+                    toast("something went wrong");
+            }
+        }
+    }, [error]);
+
+      
+
+
+      /*==================
+      Email Validation
+      ===============*/
+    const handleEmail = event =>{
+        const emailRegex = /\S+@\S+\.\S+/;
+        const validEmail = emailRegex.test(event.target.value);
+        if(validEmail){
+            setUserInput({...userInput, email:event.target.value});
+            setErrors({errors, email:''})
+        }else{
+            setErrors({...errors, email:'Invalid email'})
+            setUserInput({...userInput, email:''});
+        }
+    }
+
+    /*================ 
+    Password handle and validation
+    ================ */
+    const handlePassword =(event)=>{
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+        const validPass = passwordRegex.test(event.target.value)
+        if(validPass){
+            setUserInput({ ...userInput, password: event.target.value });
+            setErrors({...errors, password:''})
+        }else{
+            setErrors({...errors, password:'Password minimum eight characters, at least one letter and one number'})
+            setUserInput({ ...userInput, password: "" });
+        }
+    }
     
+    /*================
+    Confirm Password handle and validation
+    =================*/
+        const handleConfirmPassword = event =>{
+            if(event.target.value === userInput.password){
+                setUserInput({...userInput, confirmPass: event.target.value});
+                setErrors({...errors, confirmPass: ''});
+            }else{
+                setErrors({...errors, confirmPass:"Password didn't match.Type again"});
+                setUserInput({...userInput, confirmPass:""})
+            }
+        }
+
+        const navigateLogin =()=>{
+            navigate('/login')
+        }
+        /*===========
+        Loading function
+        ============== */
+    //   if (loading) {
+    //     return <Loading></Loading>;
+    //   }
+    /*================
+    On submit button handler
+     ================ */
+      const handleSignup =(event)=>{
+        event.preventDefault();
+        createUserWithEmailAndPassword(userInput.email,userInput.password);
+      }
     return (
         <div className='mt-5 container w-25'>
            <Form onSubmit={handleSignup}>
