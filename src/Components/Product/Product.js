@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Product = (props) => {
-    const {_id, name, img, description, Quantity, price,SupplierName} = props.product
+    const {_id, name, img, description, stock, price,SupplierName} = props.product
+    // console.log(stock, SupplierName);
     const navigate = useNavigate();
     const navigateToUpdateProduct = _id =>{
         navigate(`/product/${_id}`)
@@ -15,7 +16,7 @@ const Product = (props) => {
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">{description}</p>
                     <p>Price:${price}</p>
-                    <p>Quantity:{Quantity}</p>
+                    <p>Stock:{stock}</p>
                     <p>Supplier Name:{SupplierName}</p>
                     <button onClick={()=>navigateToUpdateProduct(_id)} className='btn btn-primary'>Update Product</button>
                 </div>

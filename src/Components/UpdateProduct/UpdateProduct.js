@@ -14,28 +14,62 @@ const UpdateProduct = () => {
         .then(data => setProduct(data))
     },[])
 
-    const {stock,name,SupplierName,price,Quantity,Sold} = product;
+    /*==================
+    Update Stock Function
+    ======================*/
+    const {stock,name,SupplierName,price,Sold} = product;
     const handleUpdateStock = event =>{
         event.preventDefault();
-        const updatedStock = parseFloat(stock) + parseFloat(event.target.stock.value);
-        const updateInfo = {stock : updatedStock,name,SupplierName,price,Quantity,Sold}
-        setProduct(updateInfo);
+        const newStock = event.target.stock.value;
+        if(newStock > 1){
+            const preStock = parseFloat(stock);
+            const currentStock = parseFloat(event.target.stock.value);
+            const updatedStock = preStock + currentStock;
+            const updateInfo = {...product,stock : updatedStock}
+            setProduct(updateInfo);
+    
+            //Send data to the server
+            const url = `http://localhost:5000/bike/${productId}`
+            fetch(url,{
+                method: 'PUT',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(updateInfo)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data)
+                alert('Stock updated')
+                event.target.reset()
+            })
+        }else{
+            alert('Enter a number greater than 0')
+        }
+    }
 
-        //Send data to the server
-        const url = `http://localhost:5000/bike/${productId}`
-        fetch(url,{
-            method: 'PUT',
-            headers: {
-                'content-type' : 'application/json'
-            },
-            body: JSON.stringify(product)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log('success', data)
-            alert('Stock updated')
-            event.target.reset()
-        })
+    const deliveredProductHandler = (productId) =>{
+        const newStock = parseFloat(stock) - 1;
+        const newSold = parseFloat(Sold) + 1;
+        const updateProduct = {...product,Sold:newSold,stock: newStock }
+        setProduct(updateProduct);
+        
+        const proceed = window.confirm('Are you sure want to deliver?');
+        if(proceed){
+            const url = `http://localhost:5000/bike/${productId}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(updateProduct)
+            })
+            .then(res => res.json())
+            .then(data =>{
+                console.log('success', data);
+                
+            })
+        }
     }
 
     return (
@@ -48,10 +82,10 @@ const UpdateProduct = () => {
                         <h3>Name: {product.name}</h3>
                         <p>Supplier Name: {product.SupplierName} </p>
                         <p>Price: {product.price} </p>
-                        <p>Quantity: {product.Quantity} </p>
-                        <p>Sold: {product.Sold} </p>
                         <p>Stock: {product.stock} </p>
-                        <button className='btn btn-secondary'>Delivered</button>
+                        <p>Sold: {product.Sold} </p>
+                        
+                        <button className='btn btn-secondary' onClick={()=>deliveredProductHandler(product._id)}>Delivered</button>
                     </div>
             </div>
             <div className='col-md-6'>
