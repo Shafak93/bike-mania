@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Product from '../Product/Product';
 
 const Products = () => {
@@ -9,14 +10,18 @@ const Products = () => {
         .then(data => setProducts(data))
     },[])
     return (
-        <div id='products' className='mt-5'>
+        <div id='products' className='mt-5 container'>
             <h1 className='text-center text-gray'>Products</h1>
-            <hr className='container' />
-            <div className='container row  mx-auto mt-4'>
+            <hr />
+            <div className=' row  mx-auto mt-4'>
             {
                 products.map(product => <Product key={product._id} product={product}></Product>)
+                
             }
+             
             </div>
+            <Link to="/manageproducts">Manage Product</Link>
+            
         </div>
     );
 };

@@ -7,6 +7,8 @@ import Products from './Components/Products/Products';
 import UpdateProduct from './Components/UpdateProduct/UpdateProduct';
 import Login from './Components/Authentication/Login/Login';
 import Signup from './Components/Authentication/Signup/Signup';
+import ManageProducts from './Components/ManageProducts/ManageProducts';
+import ManageProduct from './Components/ManageProduct/ManageProduct';
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path='/product/:productId' element={<UpdateProduct></UpdateProduct>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/manageproducts' element={<ManageProducts></ManageProducts>}></Route>
       </Routes>
     </div>
   );
