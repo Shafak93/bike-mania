@@ -6,7 +6,7 @@ import ManageProduct from '../ManageProduct/ManageProduct';
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/bike')
+        fetch('https://pure-dawn-30525.herokuapp.com/bike')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[])

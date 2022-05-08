@@ -9,7 +9,7 @@ const UpdateProduct = () => {
     const [product, setProduct] = useState({});
 
     useEffect(()=>{
-        const url = `http://localhost:5000/bike/${productId}`
+        const url = `https://pure-dawn-30525.herokuapp.com/bike/${productId}`
         fetch(url)
         .then(res => res.json())
         .then(data => setProduct(data))
@@ -30,7 +30,7 @@ const UpdateProduct = () => {
             setProduct(updateInfo);
     
             //Send data to the server
-            const url = `http://localhost:5000/bike/${productId}`
+            const url = `https://pure-dawn-30525.herokuapp.com/bike/${productId}`
             fetch(url,{
                 method: 'PUT',
                 headers: {
@@ -57,7 +57,7 @@ const UpdateProduct = () => {
         
         const proceed = window.confirm('Are you sure want to deliver?');
         if(proceed){
-            const url = `http://localhost:5000/bike/${productId}`;
+            const url = `https://pure-dawn-30525.herokuapp.com/bike/${productId}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

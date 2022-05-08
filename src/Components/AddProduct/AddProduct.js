@@ -16,7 +16,7 @@ const AddProduct = () => {
         const product ={name, description, stock, price, SupplierName, img,Sold};
 
         //Send data to the server
-        const url = `http://localhost:5000/bike`;
+        const url = `https://pure-dawn-30525.herokuapp.com/bike`;
         fetch(url,{
             method: 'POST',
             headers : {

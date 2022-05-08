@@ -6,15 +6,15 @@ const ManageProduct = (props) => {
 
     const [products, setProducts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/bike')
+        fetch('https://pure-dawn-30525.herokuapp.com/bike')
         .then(res => res.json())
         .then(data => setProducts(data))
-    },[products])
+    },[])
     
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure want to delete?');
         if(proceed){
-            const url = `http://localhost:5000/bike/${id}`
+            const url = `https://pure-dawn-30525.herokuapp.com/bike/${id}`
             fetch(url, {
                 method : 'DELETE'
             })
