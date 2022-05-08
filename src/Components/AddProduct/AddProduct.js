@@ -7,12 +7,13 @@ const AddProduct = () => {
         event.preventDefault();
         const name = event.target.name.value;
         const description = event.target.description.value;
-        const Stock = event.target.Stock.value;
+        const stock = event.target.stock.value;
         const price = event.target.price.value;
         const SupplierName = event.target.SupplierName.value;
         const img = event.target.img.value;
+        const Sold = event.target.Sold.value;
 
-        const product ={name, description, Stock, price, SupplierName, img};
+        const product ={name, description, stock, price, SupplierName, img,Sold};
 
         //Send data to the server
         const url = `http://localhost:5000/bike`;
@@ -42,7 +43,7 @@ const AddProduct = () => {
                     <Form.Control type="text" name='description' placeholder="Write Product Description" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicStock">
-                    <Form.Control type="number" name='Stock' placeholder="Enter Product Stock" />
+                    <Form.Control type="number" name='stock' placeholder="Enter Product Stock" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPrice">
                     <Form.Control type="number" name='price' placeholder="Product Price" />
@@ -52,6 +53,9 @@ const AddProduct = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicImage">
                     <Form.Control type="text" name='img' placeholder="Enter Product image URL" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicImage">
+                    <Form.Control type="number" name='Sold' placeholder="Sold Item 0" value='0' disabled />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit

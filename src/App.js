@@ -12,6 +12,8 @@ import ManageProduct from './Components/ManageProduct/ManageProduct';
 import RequireAuth from './Components/Authentication/RequireAuth/RequireAuth';
 import AddProduct from './Components/AddProduct/AddProduct';
 import NotFound from './Components/NotFound/NotFound';
+import Blog from './Components/Blog/Blog';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -38,8 +40,10 @@ function App() {
               <AddProduct></AddProduct>
           </RequireAuth>
         }></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
