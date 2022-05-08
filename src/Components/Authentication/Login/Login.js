@@ -5,6 +5,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../Loading/Loading';
 
 const Login = () => {
     const [userInput, setUserInput] = useState({
@@ -87,9 +88,9 @@ const handlePassword =(event)=>{
     /*=================
     Loading function
     ==================== */
-    // if (loading) {
-    //     return <Loading></Loading>;
-    //   }
+    if (loading) {
+        return <Loading></Loading>;
+      }
 
     /*===============
     Forget password

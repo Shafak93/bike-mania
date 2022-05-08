@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import google from '../../../images/google.ico'
+import Loading from '../../Loading/Loading';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -32,7 +33,7 @@ const SocialLogin = () => {
     }, [user , error])
 
     if(loading){
-        return <h1>Loading...</h1>
+        return <Loading></Loading>
     }
     
     return (

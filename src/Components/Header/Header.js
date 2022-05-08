@@ -27,7 +27,12 @@ const Header = () => {
                     <Nav>
                         {
                             user 
-                            ? <Nav.Link as={Link} to='login' onClick={handleSignOut}>Sign out</Nav.Link>
+                            ? <>
+                            <Nav.Link as={Link} to='manageproducts'>Manage Product</Nav.Link>
+                            <Nav.Link as={Link} to='add'>Add Product</Nav.Link>
+                            <Nav.Link as={Link} to='login' onClick={handleSignOut}>Sign out</Nav.Link>
+                             
+                             </>
                             :
                             <div className='me-5 d-flex justify-content-between'>
                                 <Nav.Link as={Link} to="login">
