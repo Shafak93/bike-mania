@@ -11,7 +11,7 @@ const Products = () => {
         .then(data => setProducts(data))
     },[])
     if(products.length === 0){
-        <Loading></Loading>
+      return  <Loading></Loading>
     }
     return (
         <div id='products' className='mt-5 container'>
@@ -19,7 +19,7 @@ const Products = () => {
             <hr />
             <div className=' row  mx-auto mt-4'>
             {
-                products.map(product => <Product key={product._id} product={product}></Product>)
+                products.slice(0,6).map(product => <Product key={product._id} product={product}></Product>)
                 
             }
              

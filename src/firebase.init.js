@@ -5,15 +5,16 @@ import {getAuth} from 'firebase/auth';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAp30-0KRG2xohYr0kK-Co7pIywLx8tVyg",
-  authDomain: "bike-mania-6a3dd.firebaseapp.com",
-  projectId: "bike-mania-6a3dd",
-  storageBucket: "bike-mania-6a3dd.appspot.com",
-  messagingSenderId: "475974614070",
-  appId: "1:475974614070:web:9c518c16b27a93365cec97"
-};
 
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
+};
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 

@@ -9,10 +9,9 @@ const ManageProduct = (props) => {
         fetch('http://localhost:5000/bike')
         .then(res => res.json())
         .then(data => setProducts(data))
-    },[])
+    },[products])
     
     const handleDelete = id =>{
-        console.log(id);
         const proceed = window.confirm('Are you sure want to delete?');
         if(proceed){
             const url = `http://localhost:5000/bike/${id}`
