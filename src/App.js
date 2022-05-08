@@ -9,6 +9,8 @@ import Login from './Components/Authentication/Login/Login';
 import Signup from './Components/Authentication/Signup/Signup';
 import ManageProducts from './Components/ManageProducts/ManageProducts';
 import ManageProduct from './Components/ManageProduct/ManageProduct';
+import RequireAuth from './Components/Authentication/RequireAuth/RequireAuth';
+import AddProduct from './Components/AddProduct/AddProduct';
 
 function App() {
   return (
@@ -18,10 +20,23 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/banner' element={<Banner></Banner>}></Route>
         <Route path='/products' element={<Products></Products>}></Route>
-        <Route path='/product/:productId' element={<UpdateProduct></UpdateProduct>}></Route>
+        <Route path='/product/:productId' element={
+          <RequireAuth>
+              <UpdateProduct></UpdateProduct>
+          </RequireAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
-        <Route path='/manageproducts' element={<ManageProducts></ManageProducts>}></Route>
+        <Route path='/manageproducts' element={
+          <RequireAuth>
+              <ManageProducts></ManageProducts>
+          </RequireAuth>
+        }></Route>
+        <Route path='/add' element={
+          <RequireAuth>
+              <AddProduct></AddProduct>
+          </RequireAuth>
+        }></Route>
       </Routes>
     </div>
   );

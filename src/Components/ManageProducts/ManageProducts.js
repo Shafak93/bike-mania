@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import ManageProduct from '../ManageProduct/ManageProduct';
 
 const ManageProducts = () => {
@@ -39,7 +40,9 @@ const ManageProducts = () => {
                 
        
             </Table> */}
-            <div className='  mx-auto mt-4'>
+            <Link className='btn btn-secondary' to='/add'>Add New Product</Link>
+           
+            <div className='mx-auto mt-4'>
             {
                 products.map(product => <ManageProduct key={product._id} product={product}></ManageProduct>)
             }

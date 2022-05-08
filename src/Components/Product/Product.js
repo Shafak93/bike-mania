@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Product = (props) => {
     const {_id, name, img, description, stock, price,SupplierName} = props.product
-    // console.log(stock, SupplierName);
     const navigate = useNavigate();
     const navigateToUpdateProduct = _id =>{
         navigate(`/product/${_id}`)
