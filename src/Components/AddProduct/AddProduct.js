@@ -2,28 +2,56 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 
 const AddProduct = () => {
-    // name, img, description, stock, price,SupplierName
+
+    const handleAddProduct = event =>{
+        event.preventDefault();
+        const name = event.target.name.value;
+        const description = event.target.description.value;
+        const Stock = event.target.Stock.value;
+        const price = event.target.price.value;
+        const SupplierName = event.target.SupplierName.value;
+        const img = event.target.img.value;
+
+        const product ={name, description, Stock, price, SupplierName, img};
+
+        //Send data to the server
+        const url = `http://localhost:5000/bike`;
+        fetch(url,{
+            method: 'POST',
+            headers : {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log('success', data)
+            alert('Product added successfully')
+            event.target.reset(); // reseting input field form
+        })
+
+    }
     return (
         <div className='w-50 mx-auto'>
             <h1 className='text-primary'>Add New Product</h1>
-            <Form >
+            <Form onSubmit={handleAddProduct}>
                 <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Control type="text" placeholder="Enter Product Name" />
+                    <Form.Control type="text" name='name' placeholder="Enter Product Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDescription">
-                    <Form.Control type="text" placeholder="Write Product Description" />
+                    <Form.Control type="text" name='description' placeholder="Write Product Description" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicStock">
-                    <Form.Control type="number" placeholder="Enter Product Stock" />
+                    <Form.Control type="number" name='Stock' placeholder="Enter Product Stock" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPrice">
-                    <Form.Control type="number" placeholder="Product Price" />
+                    <Form.Control type="number" name='price' placeholder="Product Price" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicSupplier">
-                    <Form.Control type="text" placeholder="Enter Product Supplier Name" />
+                    <Form.Control type="text" name='SupplierName' placeholder="Enter Product Supplier Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicImage">
-                    <Form.Control type="text" placeholder="Enter Product image URL" />
+                    <Form.Control type="text" name='img' placeholder="Enter Product image URL" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit

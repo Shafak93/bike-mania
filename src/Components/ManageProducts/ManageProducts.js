@@ -14,32 +14,6 @@ const ManageProducts = () => {
         <div className='mt-5 container'>
             <h1 className='text-center text-gray'>Products</h1>
             <hr />
-            {/* <Table striped bordered hover variant="dark">
-            <thead>
-                <tr>
-                <th>ID No</th>
-                <th>Product Image</th>
-                <th>Supplier Name</th>
-                <th>Price</th>
-                <th>Delete Product</th>
-                </tr>
-                </thead>
-                    {
-                     products.map(product =>
-                        <tbody>
-                        <tr>
-                            <td>{product._id}</td>
-                            <td> <img className='w-25 rounded' src={product.img} alt="" /> </td>
-                            <td>{product.SupplierName}</td>
-                            <td>{product.price}</td>
-                            <td> <button className='btn btn-secondary'>Delete</button> </td>
-                        </tr>
-                        </tbody>
-                             )
-                    }
-                
-       
-            </Table> */}
             <Link className='btn btn-secondary' to='/add'>Add New Product</Link>
            
             <div className='mx-auto mt-4'>
