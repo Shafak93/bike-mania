@@ -1,0 +1,31 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Footer.css'
+
+const Footer = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    return (
+        <footer className='mt-4'>
+            <div className='row container mx-auto'>
+                <div className='col-md-12 col-lg-4 mt-4'>
+                    <ul>
+                    <p>Quick Links</p>
+                        <Link  className='link' to='/'><li>Home</li></Link>
+                        <Link  className='link' to='/brand'><li>Brand</li></Link>
+                        <Link className='link' to='/blog'><li>Blog</li>  </Link>
+                        <Link className='link' to='/products'> <li>Products</li></Link>
+                        <Link className='link' to='/login'><li>Login</li></Link>
+                        <Link className='link' to='/signup'><li>Signup</li></Link>
+                    </ul>
+                </div>
+                <div className='footer-text col-md-12 col-lg-8'>
+                    <h1>Bike Mania Bangladeh</h1>
+                    <p> &copy; All rights reserved {year}</p>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;
