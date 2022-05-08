@@ -1,3 +1,13 @@
+# Project Name: Bike-Mania
+# Live site link : https://bike-mania-6a3dd.web.app/
+## Technology I use here
+* HTML, CSS, React Bootstrap
+* Javascript
+* React , React hooks, React route
+* Node.js , Express.js
+* firebase authentication
+* This is a warehouse management system site. Here you have to sign in with varified mail id otherwise you
+won't be able to enter protected link.You can add remove and manage your product
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
