@@ -14,6 +14,7 @@ import AddProduct from './Components/AddProduct/AddProduct';
 import NotFound from './Components/NotFound/NotFound';
 import Blog from './Components/Blog/Blog';
 import Footer from './Components/Footer/Footer';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { ToastContainer } from 'react-bootstrap';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -50,6 +51,7 @@ const SocialLogin = () => {
                     <img className='w-25' src={google} alt="" />
                     <span className='px-4'>Google Signin</span>
                 </button>
+                <ToastContainer></ToastContainer>
         </div>
     );
 };

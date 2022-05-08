@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {Button, Form } from 'react-bootstrap';
+import {Button, Form, ToastContainer } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -128,6 +128,7 @@ const handlePassword =(event)=>{
                 <p>Forget password ? <a href="" className='text-primary text-decoration-none' onClick={forgetPasswordReset}>Reset password</a> </p>
                 
             </Form>
+            <ToastContainer></ToastContainer>
             <SocialLogin></SocialLogin>
             
         </div>
