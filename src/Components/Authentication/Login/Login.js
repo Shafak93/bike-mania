@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const [userInput, setUserInput] = useState({
@@ -126,6 +127,7 @@ const handlePassword =(event)=>{
                 <p>Forget password ? <a href="" className='text-primary text-decoration-none' onClick={forgetPasswordReset}>Reset password</a> </p>
                 
             </Form>
+            <SocialLogin></SocialLogin>
             
         </div>
         </div>
