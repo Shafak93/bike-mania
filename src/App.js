@@ -44,7 +44,7 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-      <Footer></Footer>
+      
     </div>
   );
 }

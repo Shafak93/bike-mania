@@ -2,17 +2,33 @@ footer{
     height: 220px;
     background-color: #555555;
     color: rgb(224, 212, 212);
-    position: relative;
+    
 }
-.footer-text{
+/* .footer-text{
     position: absolute;
     top: 33%;
-    left: 30%;
-}
+    
+} */
 .link{
     text-decoration: none;
     color: white;
 }
 .link:hover{
     color: antiquewhite;
+}
+@media only screen and (max-width: 768px){
+    footer{
+        height: 300px;
+        background-color: #555555;
+        color: rgb(224, 212, 212);
+        
+    }
+}
+@media only screen and (max-width: 1180px ) and (min-width: 992px){
+    footer{
+        height: 220px;
+        background-color: #555555;
+        color: rgb(224, 212, 212);
+      
+    }
 }

@@ -7,8 +7,8 @@ const Footer = () => {
     const year = date.getFullYear();
     return (
         <footer className='mt-4'>
-            <div className='row container mx-auto'>
-                <div className='col-md-12 col-lg-4 mt-4'>
+            <div className='footer-box row container'>
+                <div className='col-12 col-md-6 col-lg-6 mt-4'>
                     <ul>
                     <p>Quick Links</p>
                         <Link  className='link' to='/'><li>Home</li></Link>
@@ -19,8 +19,8 @@ const Footer = () => {
                         <Link className='link' to='/signup'><li>Signup</li></Link>
                     </ul>
                 </div>
-                <div className='footer-text col-md-12 col-lg-8'>
-                    <h1>Bike Mania Bangladeh</h1>
+                <div className='footer-text col-md-6 col-12 col-lg-6 pt-lg-5 pt-md-5 text-md-end text-lg-end'>
+                    <h1>Bike Mania</h1>
                     <p> &copy; All rights reserved {year}</p>
                 </div>
             </div>

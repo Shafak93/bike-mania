@@ -6,6 +6,7 @@ import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../Loading/Loading';
+import './Login.css'
 
 const Login = () => {
     const [userInput, setUserInput] = useState({
@@ -109,8 +110,31 @@ const handlePassword =(event)=>{
     }
 
     return (
-        <div>
-            <div className='mt-5 container w-25'>
+        <div className='main'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,256L720,0L1440,160L1440,0L720,0L0,0Z"></path></svg>
+            
+                <div className='form-class'>
+                    <Form onSubmit={handleLogin}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Control className='input-box '  type="email" name='email' placeholder="Enter email" onChange={handleEmail}/>
+                        {errors?.email && <p className="text-danger">{errors.email}</p>}
+                    </Form.Group>
+                    <Form.Group className="mb-3"  controlId="formBasicPassword">
+                        <Form.Control className='input-box' type="password" name='password' placeholder="Password"  onChange={handlePassword}/>
+                        {errors?.password && <p className="  text-danger">{errors.password}</p> }
+                    </Form.Group>
+                    
+                    <p>Don't have an account ? <Link to={'/signup'} className='text-danger text-decoration-none' onClick={navigateSignup}>Signup Now</Link> </p>
+                    <Button variant="primary" type="submit">
+                        Login
+                    </Button>
+                    <p>Forget password ? <a href="" className='text-primary text-decoration-none' onClick={forgetPasswordReset}>Reset password</a> </p>
+                    
+                </Form>
+                <ToastContainer></ToastContainer>
+                <SocialLogin></SocialLogin>
+            </div>
+            {/* <div className='mt-5 container w-25'>
            <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control type="email" name='email' placeholder="Enter email" onChange={handleEmail}/>
@@ -131,7 +155,7 @@ const handlePassword =(event)=>{
             <ToastContainer></ToastContainer>
             <SocialLogin></SocialLogin>
             
-        </div>
+        </div> */}
         </div>
     );
 };
