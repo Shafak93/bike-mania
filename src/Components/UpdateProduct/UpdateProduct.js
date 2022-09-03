@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Loading from '../Loading/Loading';
 import './UpdateProduct.css';
 
@@ -97,6 +98,7 @@ const UpdateProduct = () => {
                         <button className='btn btn-secondary'>Update</button>
                     </Form>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

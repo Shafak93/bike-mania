@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ManageProduct = (props) => {
     const {_id, name, img, description, stock, price,SupplierName} = props.product
@@ -9,7 +10,7 @@ const ManageProduct = (props) => {
         fetch('https://pure-dawn-30525.herokuapp.com/bike')
         .then(res => res.json())
         .then(data => setProducts(data))
-    },[])
+    },[products])
     
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure want to delete?');
@@ -23,6 +24,7 @@ const ManageProduct = (props) => {
                 console.log(data);
                 const remaining = products.filter(product => product._id !== id)
                 setProducts(remaining);
+                toast.success('Product delete successfully !!!')
             })
         }
     }
@@ -43,6 +45,7 @@ const ManageProduct = (props) => {
             <div  className='col-md-2'>
                 <button className='btn btn-danger' onClick={()=>handleDelete(_id)}>Delete</button>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

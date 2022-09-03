@@ -1,0 +1,19 @@
+.service-box{
+    border: 1px solid #e6e6e6;
+    border-radius: 25px 0px 25px 0px;
+    border-bottom: 3px solid #b9babc;
+    cursor: pointer;
+}
+.service-box:hover{
+     border-bottom: 3px solid #4ab9cf;
+     box-shadow: 1px 1px 10px gray;
+     transition: 0.3s;
+}
+.service-box:hover .icon{
+    color: #4ab9cf;
+    transition: 0.3s;
+}
+.service-box .icon{
+    margin-top: 15px;
+    width: 100px;
+}
