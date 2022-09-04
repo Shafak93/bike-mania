@@ -21,12 +21,9 @@ const Products = () => {
             <div className=' row mt-4'>
             {
                 products.slice(0,6).map(product => <Product key={product._id} product={product}></Product>)
-                
             }
-             
             </div>
             <Link className='btn btn-primary' to="/manageproducts">Manage Product</Link>
-            
         </div>
     );
 };

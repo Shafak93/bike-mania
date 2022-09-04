@@ -60,7 +60,6 @@ const OurServices = () => {
                             </div>
                         </div>)
                 }
-                
             </div>
         </div>
     );
