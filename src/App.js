@@ -1,20 +1,18 @@
 // import './App.css';
-import Header from './Components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import AddProduct from './Components/AddProduct/AddProduct';
+import Login from './Components/Authentication/Login/Login';
+import RequireAuth from './Components/Authentication/RequireAuth/RequireAuth';
+import Signup from './Components/Authentication/Signup/Signup';
 import Banner from './Components/Banner/Banner';
+import Blog from './Components/Blog/Blog';
+import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
+import ManageProducts from './Components/ManageProducts/ManageProducts';
+import NotFound from './Components/NotFound/NotFound';
 import Products from './Components/Products/Products';
 import UpdateProduct from './Components/UpdateProduct/UpdateProduct';
-import Login from './Components/Authentication/Login/Login';
-import Signup from './Components/Authentication/Signup/Signup';
-import ManageProducts from './Components/ManageProducts/ManageProducts';
-import ManageProduct from './Components/ManageProduct/ManageProduct';
-import RequireAuth from './Components/Authentication/RequireAuth/RequireAuth';
-import AddProduct from './Components/AddProduct/AddProduct';
-import NotFound from './Components/NotFound/NotFound';
-import Blog from './Components/Blog/Blog';
-import Footer from './Components/Footer/Footer';
-import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (

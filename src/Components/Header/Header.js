@@ -12,17 +12,19 @@ const Header = () => {
         
       }
     return (
-        <div>
-            <Navbar bg="dark" variant="dark" expand="lg" sticky='top'>
+        <div style={{ backgroundColor: "#071740", position: "sticky" , top: '0', zIndex:'10'}}>
+            <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand as={Link} to='/' className='heder-title'>Bike Mania</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/banner" href="#banner">Brand</Nav.Link>
                         <Nav.Link as={Link} to="/products" href="#products">Products</Nav.Link>
                         <Nav.Link as={Link} to="/blog" href="#products">Blogs</Nav.Link>
+                        <Nav.Link href="#services">Our Services</Nav.Link>
+                        <Nav.Link href="#values">Core Values</Nav.Link>
+                        <Nav.Link href="#partner">Our Partners</Nav.Link>
                     </Nav>
                     
                     <Nav>

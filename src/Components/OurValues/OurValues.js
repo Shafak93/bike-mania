@@ -4,7 +4,7 @@ import './OurValues.css';
 
 const OurValues = () => {
     return (
-        <div className='value-body mt-5'>
+        <div id='values' className='value-body mt-5'>
             {/* <img src={bgValue} alt="" /> */}
             <div className='value-text'>
                 <h3>OUR CORE VALUES</h3>

@@ -35,7 +35,7 @@ const Partners = () => {
         }
     ]
     return (
-        <div className='container mt-5'>
+        <div id='partner' className='container mt-5'>
             <h1>Our Partners</h1>
             <hr />
             <div className='d-flex flex-wrap justify-content-around'>
