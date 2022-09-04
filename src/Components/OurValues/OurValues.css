@@ -1,0 +1,28 @@
+.value-body{
+    background-image: url('../../images/banner/bg-img.jpg');
+    height: 500px;
+}
+.value-text{
+    padding-top: 10%;
+    margin: 0 auto;
+   width: 600px;
+}
+.value-text h3, .author{
+    text-align: center;
+}
+@media screen and (max-width: 575.98px) {
+    .value-text{
+        padding-top: 15%;
+        margin: 0 auto;
+        width: 350px;
+}
+
+}
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .value-text{
+        padding-top: 15%;
+        margin: 0 auto;
+        width: 550px;
+}
+}
+

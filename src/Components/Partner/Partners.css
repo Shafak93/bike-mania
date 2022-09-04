@@ -1,0 +1,13 @@
+.partner-box{
+    border: 1px solid #e6e6e6;
+    border-bottom: 3px solid #b9babc;
+    cursor: pointer;
+}
+.partner-box:hover{
+    border-bottom: 3px solid #4ab9cf;
+     box-shadow: 1px 1px 10px gray;
+     transition: 0.3s;
+}
+.partner-box img{
+    width: 150px;
+}
