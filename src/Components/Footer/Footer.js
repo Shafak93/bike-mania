@@ -1,6 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import { FaFacebookF, FaGem, FaGithub, FaGoogle, FaHome, FaInstagram, FaLinkedin, FaPhoneAlt, FaPrint, FaRegEnvelope, FaTwitter } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -8,7 +9,7 @@ const Footer = () => {
     const year = date.getFullYear();
     return (
             <footer class="text-center text-lg-start bg-light text-muted mt-5">
-            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <section class="container d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
                 <div class="me-5 d-none d-lg-block">
                     <span>Get connected with us on social networks:</span>
@@ -35,8 +36,8 @@ const Footer = () => {
                 </div>
 
             </section>
-            <section class="">
-                <div class="container text-center text-md-start mt-5">
+            <section class="container">
+                <div class="text-center text-md-start mt-5">
 
                     <div class="row mt-3">
 
@@ -79,16 +80,16 @@ const Footer = () => {
                                 Useful links
                             </h6>
                             <p>
-                                <a href="#!" class="text-reset">Pricing</a>
+                                <Link to='/products' class="text-reset">Products</Link>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Settings</a>
+                                <a href="#services" class="text-reset">Our Services</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Orders</a>
+                                <a href="#values" class="text-reset">Core Values</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Help</a>
+                                <a href="partner" class="text-reset">Our Partners</a>
                             </p>
                         </div>
 
@@ -100,7 +101,7 @@ const Footer = () => {
                             <p><FaHome /> New York, NY 10012, US</p>
                             <p>
                                 <FaRegEnvelope />
-                                info@example.com
+                                bike@mania.com
                             </p>
                             <p><FaPhoneAlt /> +00 00 00 0000 00</p>
                             <p><FaPrint /> + 11 111 11 111 11</p>
@@ -110,6 +111,9 @@ const Footer = () => {
 
                 </div>
             </section>
+            <div class="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.07)'}}>
+                &copy; All rights reserved {year}<a class="pr-3 text-reset fw-bold ml-3" href="">bikemania.com</a>
+            </div>
 
 
                 {/* <div className='footer-box row container'>

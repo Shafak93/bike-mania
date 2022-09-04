@@ -39,33 +39,6 @@ const Banner = () => {
                         </Carousel.Item>
                         )
                 }
-                        {/* <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src={banner3}
-                            alt="First slide"
-                            />
-                            <Carousel.Caption>
-                           <h1 className='text-white'>Bike Mania</h1>
-                            
-                            </Carousel.Caption>
-                        </Carousel.Item> */}
-                        {/* <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src={banner2}
-                            alt="Second slide"
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src={banner1}
-                            alt="Third slide"
-                            />
-
-                            
-                        </Carousel.Item> */}
                 </Carousel>
         </div>
     );
